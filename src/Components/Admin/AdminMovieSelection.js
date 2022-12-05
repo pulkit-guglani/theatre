@@ -10,7 +10,9 @@ export default function AdminMovieSelection() {
 
   const handleSave = async (e) => {
     e.preventDefault();
-
+    if (!movieURL.current.value) {
+      return;
+    }
     let data = { currentMovie: movieURL.current.value };
     console.log(Date.now());
 
@@ -24,14 +26,15 @@ export default function AdminMovieSelection() {
   };
 
   const prompt = (
-    <form onSubmit={handleSave}>
+    <form onSubmit={handleSave} className="inputDiv">
+      <h2>Enter movie URL</h2>
       <input placeholder="Enter Movie URL" type="URL" ref={movieURL}></input>
       <button
         onClick={() => {
           //  navigate("/movieRoom");
         }}
       >
-        Submit
+        <p>Submit</p>
       </button>
     </form>
   );

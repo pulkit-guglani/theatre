@@ -1,18 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { db } from "../../firebase";
 import { getDoc, doc } from "@firebase/firestore";
-
+import { BsPlayFill, BsPauseFill, BsFullscreen } from "react-icons/bs";
+import { AiOutlineReload } from "react-icons/ai";
 export default function MovieRoom() {
-  const playButtonRef = useRef(null);
-  const pauseButtonRef = useRef(null);
   const videoSourceRef = useRef(null);
   const videoRef = useRef(null);
+  const ref = doc(db, "room1", "movieURL");
+  let to = useRef(null);
 
   let currentButtonClicked = "";
-  const ref = doc(db, "room1", "movieURL");
-
-  let to = useRef(null);
-  console.log("to reset to : " + to);
   let url =
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
 
@@ -87,7 +84,7 @@ export default function MovieRoom() {
 
   return (
     <div>
-      <video ref={videoRef} id="video" style={{ height: "200px" }} autoPlay>
+      <video ref={videoRef} id="video" style={{ width: "70%" }} autoPlay>
         <source
           ref={videoSourceRef}
           id="video_source"
@@ -96,44 +93,52 @@ export default function MovieRoom() {
         />
       </video>
       <br />
-      <p id="videoPosition"></p>
-      <br />
-      <button
-        id="play"
-        onClick={() => {
-          currentButtonClicked = "play";
-          OnButtonClick();
-        }}
-      >
-        Start
-      </button>
-      <button
-        id="pause"
-        onClick={() => {
-          currentButtonClicked = "pause";
-          OnButtonClick();
-        }}
-      >
-        Pause
-      </button>
-      <button
-        id="restart"
-        onClick={() => {
-          currentButtonClicked = "restart";
-          OnButtonClick();
-        }}
-      >
-        Restart
-      </button>
-      <button
-        id="fullscreen"
-        onClick={() => {
-          currentButtonClicked = "fullscreen";
-          OnButtonClick();
-        }}
-      >
-        FullScreen
-      </button>
+
+      <div className="controls">
+        <button
+          style={{ marginLeft: "14.8%" }}
+          id="play"
+          onClick={() => {
+            currentButtonClicked = "play";
+            OnButtonClick();
+          }}
+        >
+          <BsPlayFill />
+        </button>
+        <button
+          id="pause"
+          onClick={() => {
+            currentButtonClicked = "pause";
+            OnButtonClick();
+          }}
+        >
+          <BsPauseFill />
+        </button>
+        <button
+          id="restart"
+          onClick={() => {
+            currentButtonClicked = "restart";
+            OnButtonClick();
+          }}
+        >
+          <AiOutlineReload />
+        </button>
+
+        <p
+          id="videoPosition"
+          style={{ marginTop: "11px", marginLeft: "20px" }}
+        ></p>
+        <button
+          style={{ marginLeft: "auto", marginRight: "14.8%" }}
+          id="fullscreen"
+          onClick={() => {
+            currentButtonClicked = "fullscreen";
+            OnButtonClick();
+          }}
+        >
+          <BsFullscreen />
+        </button>
+      </div>
     </div>
   );
 }

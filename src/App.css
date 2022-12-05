@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@800&display=swap");
+body {
+  font-family: "Jost";
+}
 .App {
   text-align: center;
 }
@@ -28,11 +32,16 @@
   color: #61dafb;
 }
 
-p,h1,h3,h2{
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: #fffffe;
 }
 
-.buttonGroup{
+.buttonGroup {
   border-radius: 20px;
   padding: 20px;
   background-color: #16161a;
@@ -40,32 +49,75 @@ p,h1,h3,h2{
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  gap : 10px;
-  width:min-content;
+  gap: 10px;
+  width: min-content;
 }
 
-button{
-  width: 30vw;
-  min-width: 250px;
-  max-width: 500px;
-
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+button {
   background-color: #6246ea;
-  color: #fffffe;
-  border-radius: 5px;
-  padding: 0px;
-  padding-right: 5px;
-  padding-left: 5px;
-
 }
 button:hover {
   cursor: pointer;
   background-color: #4d31de;
 }
-button img{
+
+.controls button {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.buttonGroup button {
+  width: 30vw;
+  min-width: 250px;
+  max-width: 500px;
+  color: #fffffe;
+  border-radius: 5px;
+  padding: 0px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.controls button:hover {
+  color: grey;
+}
+
+.buttonGroup button img {
   width: 40px;
   float: right;
   translate: 0 -10px;
 }
-button p{
-  font-size:large;
+
+button p {
+  font-size: large;
+}
+
+.inputDiv {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #16161a;
+  width: min-content;
+  padding-top: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputDiv button {
+  width: 15vw;
+}
+.inputDiv input {
+  width: 20vw;
+  height: 3vw;
+  font-size: large;
 }

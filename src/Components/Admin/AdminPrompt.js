@@ -5,9 +5,7 @@ const AdminPrompt = ({ roomID, roomName }, ...props) => {
 
   const prompt = (
     <div>
-      <p>
-        {roomName}: {roomID}
-      </p>
+      <p>{roomName}</p>
       <div className="buttonGroup">
         <button onClick={() => navigate("/adminLogin")}>
           <p>Have Admin Key</p>
