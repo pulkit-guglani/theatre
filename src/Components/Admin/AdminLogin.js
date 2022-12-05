@@ -14,7 +14,7 @@ const AdminLogin = () => {
           navigate("/adminMovieSelection")
         }
       >
-        Submit
+        <p>Submit</p>
       </button>
     </div>
   );

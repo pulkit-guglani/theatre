@@ -8,6 +8,7 @@ import { useContext } from "react";
 import AdminLogin from "./Components/Admin/AdminLogin";
 import AdminMovieSelection from "./Components/Admin/AdminMovieSelection";
 import MovieRoom from "./Components/MovieRoom/MovieRoom";
+import Background from "./Components/Background";
 
 function App() {
   const adminKeys = ["1234", "4321"];
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Background />
       <AllRoutes />
     </div>
   );

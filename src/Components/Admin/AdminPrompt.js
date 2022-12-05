@@ -8,8 +8,15 @@ const AdminPrompt = ({ roomID, roomName }, ...props) => {
       <p>
         {roomName}: {roomID}
       </p>
-      <button onClick={() => navigate("/adminLogin")}>Have Admin Key</button>
-      <button onClick={() => navigate("/movieRoom")}>Enter Room</button>
+      <div className="buttonGroup">
+        <button onClick={() => navigate("/adminLogin")}>
+          <p>Have Admin Key</p>
+        </button>
+
+        <button onClick={() => navigate("/movieRoom")}>
+          <p>Enter Room</p>
+        </button>
+      </div>
     </div>
   );
 
