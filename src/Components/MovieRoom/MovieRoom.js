@@ -2,7 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { db } from "../../firebase";
 import { getDoc, doc } from "@firebase/firestore";
 import { BsPlayFill, BsPauseFill, BsFullscreen } from "react-icons/bs";
-import { AiOutlineReload } from "react-icons/ai";
+import {
+  AiFillStepForward,
+  AiFillStepBackward,
+  AiOutlineReload,
+} from "react-icons/ai";
 export default function MovieRoom() {
   const videoSourceRef = useRef(null);
   const videoRef = useRef(null);
@@ -77,6 +81,12 @@ export default function MovieRoom() {
       case "restart":
         to.update({ position: 0.0, velocity: 1.0 });
         break;
+      case "backward":
+        to.update({ position: Math.max(0, to.query().position - 5) });
+        break;
+      case "forward":
+        to.update({ position: to.query().position + 5 });
+        break;
       case "fullscreen":
         videoRef.current.requestFullscreen();
     }
@@ -126,8 +136,31 @@ export default function MovieRoom() {
 
         <p
           id="videoPosition"
-          style={{ marginTop: "11px", marginLeft: "20px" }}
+          style={{ marginTop: "11px", marginLeft: "10px", width: "70px" }}
         ></p>
+
+        <button
+          style={{ marginLeft: "auto" }}
+          id="backward"
+          onClick={() => {
+            currentButtonClicked = "backward";
+            OnButtonClick();
+          }}
+        >
+          <AiFillStepBackward />
+        </button>
+        <p>5s</p>
+        <button
+          style={{}}
+          id="forward"
+          onClick={() => {
+            currentButtonClicked = "forward";
+            OnButtonClick();
+          }}
+        >
+          <AiFillStepForward />
+        </button>
+
         <button
           style={{ marginLeft: "auto", marginRight: "14.8%" }}
           id="fullscreen"
