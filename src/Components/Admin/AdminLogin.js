@@ -12,7 +12,7 @@ const AdminLogin = () => {
     <form className="inputDiv" onSubmit={authenticate}>
       <h2>Enter Admin Key ( Hint: 1234 )</h2>
       <input placeholder="Enter Key" type="text" ref={adminKey}></input>
-      <button onClick={{}}>
+      <button>
         <p>Submit</p>
       </button>
     </form>
