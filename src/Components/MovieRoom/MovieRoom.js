@@ -94,7 +94,7 @@ export default function MovieRoom() {
 
   return (
     <div>
-      <video ref={videoRef} id="video" style={{ width: "60%" }} autoPlay>
+      <video ref={videoRef} id="video" style={{ width: "55%" }} autoPlay>
         <source
           ref={videoSourceRef}
           id="video_source"
