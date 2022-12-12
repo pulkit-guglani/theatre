@@ -27,7 +27,7 @@ const AllRoutes = () => (
     <Routes>
       <Route path="/" element={<RoomsList count="5" />}></Route>
       <Route
-        path="/adminPrompt"
+        path="/adminPrompt/:id"
         element={<AdminPrompt roomID="156" roomName="Room 2" />}
       ></Route>
       <Route path="/adminLogin" element={<AdminLogin />}></Route>

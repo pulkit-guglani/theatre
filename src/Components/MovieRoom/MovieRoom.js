@@ -94,7 +94,7 @@ export default function MovieRoom() {
 
   return (
     <div>
-      <video ref={videoRef} id="video" style={{ width: "70%" }} autoPlay>
+      <video ref={videoRef} id="video" style={{ width: "60%" }} autoPlay>
         <source
           ref={videoSourceRef}
           id="video_source"
@@ -106,7 +106,7 @@ export default function MovieRoom() {
 
       <div className="controls">
         <button
-          style={{ marginLeft: "14.8%" }}
+          style={{ marginLeft: "20%" }}
           id="play"
           onClick={() => {
             currentButtonClicked = "play";
@@ -162,7 +162,7 @@ export default function MovieRoom() {
         </button>
 
         <button
-          style={{ marginLeft: "auto", marginRight: "14.8%" }}
+          style={{ marginLeft: "auto", marginRight: "20%" }}
           id="fullscreen"
           onClick={() => {
             currentButtonClicked = "fullscreen";
